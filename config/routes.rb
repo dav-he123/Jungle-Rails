@@ -20,10 +20,6 @@ Rails.application.routes.draw do
 
   end
 
-  # GifVault::Application.routes.draw do
-    
-    # root to: 'gif#cool'
-
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 get '/logout' => 'sessions#destroy'
