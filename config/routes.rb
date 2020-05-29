@@ -17,12 +17,9 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :show]
+    resources :sales, only: [:index, :new]
 
   end
-
-  # GifVault::Application.routes.draw do
-    
-    # root to: 'gif#cool'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
