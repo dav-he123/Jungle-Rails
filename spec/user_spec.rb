@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'Validations' do
-        # user{User.new(first_name: "Joe", last_name: "Smith", email: 'joe.smith@yahoo.ca', password: "jungle", password_confirmation: "jungle")}
     user = User.new
     
     # user.first_name = "Joe"
@@ -50,7 +49,24 @@ RSpec.describe User, type: :model do
   
   describe '.authenticate_with_credentials' do
     # examples for this class method here
+    user = User.new
 
+    user.name = "Joe Smith"
+
+    user.email= 'joe.smith@yahoo.ca'
+    
+    user.password= "jungle" 
+    
+    user.password_confirmation= "jungle"
+
+    it 'is valid when email has few/spaces before and/or after' do
+      user.email = ' joe.smith@yahoo.ca ';
+      expect(user).to be_valid
+    end
+
+    it 'is valid when email is in wrong case' do
+      user.email = 'JOE.smith@YAHoo.ca';
+      expect(user).to be_valid
+    end
   end
-
 end
