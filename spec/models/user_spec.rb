@@ -4,11 +4,11 @@ RSpec.describe User, type: :model do
   describe 'Validations' do
     user = User.new
     
-    # user.first_name = "Joe"
+    user.first_name = "Joe"
 
-    # user.last_name = "Smith"
+    user.last_name = "Smith"
 
-    user.name = "Joe Smith"
+    # user.name = "Joe Smith"
 
     user.email= 'joe.smith@yahoo.ca'
     
@@ -25,15 +25,15 @@ RSpec.describe User, type: :model do
       expect(user.password).to_not eq(user.password_confirmation)
     end
 
-    it 'is not valid when name is nil' do
-      user.name = nil;
+    it 'is not valid when first_name is nil' do
+      user.first_name = nil;
       expect(user).not_to be_valid
     end
 
-    # it 'is not valid when last_name is nil' do
-    #   user.last_name = nil;
-    #   expect(user).not_to be_valid
-    # end
+    it 'is not valid when last_name is nil' do
+      user.last_name = nil;
+      expect(user).not_to be_valid
+    end
 
     it 'is not valid when email is nil' do
       user.email = nil;
@@ -51,7 +51,9 @@ RSpec.describe User, type: :model do
     # examples for this class method here
     user = User.new
 
-    user.name = "Joe Smith"
+    user.first_name = "Joe"
+
+    user.last_name = "Smith"
 
     user.email= 'joe.smith@yahoo.ca'
     
