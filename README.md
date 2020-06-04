@@ -29,6 +29,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-!["Home Page"]()
-!["Cart with added products"]()
-!["Product description page"]()
+!["Home Page"](https://github.com/dav-he123/Jungle-Rails/blob/submit/files/docs/Screenshot%20from%202020-06-03%2022-04-01.png?raw=true)
+!["Cart with added products"](https://github.com/dav-he123/Jungle-Rails/blob/submit/files/docs/Screenshot%20from%202020-06-03%2022-04-13.png?raw=true)
+!["Product description page"](https://github.com/dav-he123/Jungle-Rails/blob/submit/files/docs/Screenshot%20from%202020-06-03%2022-07-16.png?raw=true)
