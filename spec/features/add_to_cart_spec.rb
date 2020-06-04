@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "AddToCarts", type: :feature, js: true do
   # pending "add some scenarios (or delete) #{__FILE__}"
 
-  # SETUP
+ # SETUP
  before :each do
   @category = Category.create! name: 'Apparel'
 
@@ -18,23 +18,19 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     end
   end
 
-   scenario "They see the product detail page" do
+   scenario "Test for the Cart being updated," do
 
     # ACT
+    # path = Cart.all.sample
     visit root_path
 
-    path = Product.all[9]
-    p path.name
-
-    # DEBUG
+    # DEBUG/VERIFY
     # expect(page).to have_text(path.name)
-    page.find(:link, "#{path.name}").click
-
-    expect(page).to have_selector 'section.products-show'
+    page.find(:button, "Add", match: :first).click
 
 
-    # VERIFY
+    expect(page).to have_text "My Cart (1)"
     save_screenshot
-  end
 
+  end
 end
